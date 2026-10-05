@@ -1,0 +1,104 @@
+# configs-defaults.yaml
+# sample configs defaults file
+
+method: grid
+#name: TEXTUREDSPRITES_to_plankton
+#name: ONLYTEXTURE_to_plankton
+name: BRODATZTEXTUREBACKBONEVAE_to_whoi40_224
+
+parameters:
+
+  input_experiment:
+    value: BRODATZTEXTUREDSPRITESBACKBONEVAE
+
+  epochs:
+    #desc: Number of epochs to train over
+    value: 20
+
+  batch_size:
+    #desc: Size of each mini-batch
+    value: 128
+
+  val_batch_size:
+    #desc: Size of each mini-batch
+    value: 2
+
+  lr:
+    #desc: Learning rate
+    #distribution: uniform
+
+    value: 0.0001
+
+  dataset:
+    value: whoi15_2007_representation
+
+
+  postprocess_dataset:
+    value: whoi15_2007_representation
+
+  postprocess_dims:
+    value: [0, 1, 2, 3, 4] # , 5, 6, 7, 8, 9
+
+
+  dim_to_factor:
+    value: ["Texture", "Color", "Shape", "Scale","Orientation"] #  ["Texture"] ["Texture", "Color", "Shape", "Scale","Orientation", "PosX", "PosY", "7", "8", "9"]
+
+
+  dim_to_freeze:
+    value: []
+
+  multithread:
+    value: True
+
+  method:
+    value: backbone_vae
+
+  beta:
+    values:
+      - 1
+      - 2
+
+  criterion:
+    value: mse_features
+
+  latent_dim:
+    value: 10
+
+  perc_val_set:
+    value: 0.2
+
+  n_filters:
+    value: 256
+
+  random_seed:
+    values:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+
+
+  split_random_seed:
+    value: 42
+
+  grad_acc_steps:
+    value: 2
+
+
+  n_reconstruction:
+    value: 5
+
+  n_animations:
+    value: 15
+
+  n_samples:
+    value: 2
+
+
+
